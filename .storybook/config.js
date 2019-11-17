@@ -6,7 +6,7 @@ setOptions({
    * name to display in the top left corner
    * @type {String}
    */
-  name: "react-typescript-component-starter-kit",
+  name: "react-file-diff-viewer",
   /**
    * URL for name in top left corner to link to
    * @type {String}

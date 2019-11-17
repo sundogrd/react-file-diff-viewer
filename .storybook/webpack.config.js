@@ -1,4 +1,4 @@
-module.exports = (baseConfig, env, config) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
@@ -15,6 +15,29 @@ module.exports = (baseConfig, env, config) => {
         }
       }
     ]
+  });
+
+  config.module.rules.push({
+    test: /\.stories\.tsx?$/,
+    loaders: [
+      {
+        loader: require.resolve("@storybook/source-loader"),
+        options: {
+          parser: "typescript",
+          prettierConfig: {
+            semi: true,
+            singleQuote: true,
+            jsxSingleQuote: false,
+            useTabs: false,
+            tabWidth: 2,
+            trailingComma: "all",
+            printWidth: 80,
+            arrowParens: "always"
+          }
+        }
+      }
+    ],
+    enforce: "pre"
   });
 
   config.resolve.extensions.push(".ts", ".tsx", ".json");
