@@ -1,0 +1,9 @@
+node_modules
+.docz
+.idea
+compiled
+dist
+coverage
+yarn-error.log
+storybook-static
+yarn.lock
